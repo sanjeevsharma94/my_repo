@@ -23,9 +23,8 @@ stages:
   - job: TestOnLinux
     steps:
     - script: echo Testing on Linux!
-    steps:
-    - publish: ./
-    artifact: Artifact
+    - publish: $(System.DefaultWorkingDirectory)/
+      artifact: MyArtifact
 
 - stage: Deploy
   jobs:
