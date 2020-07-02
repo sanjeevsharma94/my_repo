@@ -36,6 +36,6 @@ stages:
   jobs:
   - job: Deploy
     steps:
-    - script: echo Deploying the code!
+    - script: ping 8.8.8.8
 
 
