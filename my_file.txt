@@ -1,1 +1,2 @@
-first build /u/build/image
+first commit /u/build/image
+second commit /u/build/image2
