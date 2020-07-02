@@ -3,6 +3,13 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+
+variables:
+- name: Meter
+  value: Wasion_1bfc
+- name: Feature
+  value: DLMS
+
 trigger:
 - master
 
@@ -15,14 +22,13 @@ stages:
   - job: BuildJob
     steps:
     - script: echo Building!
+
+
 - stage: Test
   jobs:
-  - job: TestOnWindows
-    steps:
-    - script: echo Testing on Windows!
   - job: TestOnLinux
     steps:
-    - script: echo Testing on Linux!
+    - script: echo  Regression Triggered ${{ variables.Meter }} , ${{ variables.Feature}} ! 
     - publish: $(System.DefaultWorkingDirectory)/
       artifact: MyArtifact
 
